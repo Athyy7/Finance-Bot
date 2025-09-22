@@ -340,7 +340,7 @@ $RECYCLE.BIN/
 # AI/ML & Processing
 # ================================
 # Model files
-models/
+
 *.pkl
 *.joblib
 *.h5
