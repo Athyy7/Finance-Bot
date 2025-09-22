@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette */
+  --primary-black: #0a0a0a;
+  --secondary-black: #1a1a1a;
+  --tertiary-black: #2a2a2a;
+  --silver: #c0c0c0;
+  --light-silver: #e8e8e8;
+  --dark-silver: #a0a0a0;
+  --accent-silver: #f5f5f5;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
+  --gradient-secondary: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);
+  --gradient-silver: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  --gradient-accent: linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 100%);
+  
+  /* Shadows */
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-silver: 0 2px 8px rgba(192, 192, 192, 0.1);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-out;
+  --transition-medium: 0.25s ease-out;
+  --transition-slow: 0.4s ease-out;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: var(--gradient-primary);
+  color: var(--silver);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-silver);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-silver);
+}
+
+/* Selection Styling */
+::selection {
+  background: var(--silver);
+  color: var(--primary-black);
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--silver);
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.gradient-text {
+  background: var(--gradient-silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(42, 42, 42, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(192, 192, 192, 0.1);
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-silver);
+  color: var(--primary-black);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.btn-secondary {
+  background: var(--gradient-secondary);
+  color: var(--silver);
+  border: 1px solid rgba(192, 192, 192, 0.2);
+}
+
+.btn-secondary:hover {
+  border-color: var(--silver);
+  background: var(--gradient-accent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--silver);
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover {
+  background: rgba(192, 192, 192, 0.1);
+  border-color: rgba(192, 192, 192, 0.2);
+}
+
+/* Input Styles */
+.input {
+  width: 100%;
+  padding: 16px;
+  background: rgba(26, 26, 26, 0.9);
+  border: 1px solid rgba(192, 192, 192, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--silver);
+  font-family: inherit;
+  font-size: 14px;
+  transition: all var(--transition-medium);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--silver);
+  background: rgba(26, 26, 26, 1);
+  box-shadow: 0 0 0 3px rgba(192, 192, 192, 0.1);
+}
+
+.input::placeholder {
+  color: var(--dark-silver);
+}
+
+/* Card Styles */
+.card {
+  background: var(--gradient-secondary);
+  border: 1px solid rgba(192, 192, 192, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  
+  .input {
+    padding: 14px;
+  }
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
