@@ -16,3 +16,5 @@ mcp[cli]
 streamlit
 pinecone
 anthropic
+gunicorn
+flask
